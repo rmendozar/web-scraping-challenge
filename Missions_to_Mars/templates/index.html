@@ -1,0 +1,99 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta http-equiv="X-UA-Compatible" content="ie=edge">
+  <title>Mission to Mars</title>
+  <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css">
+</head>
+
+<body>
+  <div class="container-fluid">
+    <div class="jumbotron text-center">
+      <h1>Mission to Mars...</h1>
+      <p>Fun facts about the red planet</p>
+      <p><a class="btn btn-primary btn-lg" href="/scrapedata" role="button">Get Data!</a></p>
+    </div>
+
+    <div class="card">
+        <div class="card-header">
+            <h1>Nasa featured news about Mars</h1>
+        </div>
+        <div class="card-body">
+          <blockquote class="blockquote mb-0">
+            <p>{{ marsData.nasaData.news_title }}</p>
+            <footer class="blockquote-footer">Teaser - <cite title="Source Title">{{ marsData.nasaData.news_teaser }}</cite></footer>
+          </blockquote>
+        </div>
+      </div>
+  </div>
+    <div class="row">
+          <div class="col-sm-8">
+            <div class="card">
+              <div class="card-body">
+                  <h1 class="card-title">Featured Image</h1>
+                  <h4 class="card-subtitle mb-2 text-muted">{{ marsData.featuredImage.feature_image_title }}</h4>
+                  <p class="card-text">{{ marsData.featuredImage.feature_image_description }}</p>
+                  <img src={{ marsData.featuredImage.feature_image }} alt="MarsImage" class="image">
+              </div>
+            </div>
+          </div>
+          <div class="col-sm-4">
+            <div class="card">
+              <div class="card-body">
+                  <h5 class="card-title">Some facts abouts Mars</h5>
+                  <h6 class="card-subtitle mb-2 text-muted">from space facts</h6>
+                  <p class="card-text"><table border="1" class="dataframe"> <tbody> <tr> <td>Equatorial Diameter:</td> <td>6,792 km</td> </tr> <tr> <td>Polar Diameter:</td> <td>6,752 km</td> </tr> <tr> <td>Mass:</td> <td>6.39 × 10^23 kg (0.11 Earths)</td> </tr> <tr> <td>Moons:</td> <td>2 (Phobos &amp; Deimos)</td> </tr> <tr> <td>Orbit Distance:</td> <td>227,943,824 km (1.38 AU)</td> </tr> <tr> <td>Orbit Period:</td> <td>687 days (1.9 years)</td> </tr> <tr> <td>Surface Temperature:</td> <td>-87 to -5 °C</td> </tr> <tr> <td>First Record:</td> <td>2nd millennium BC</td> </tr> <tr> <td>Recorded By:</td> <td>Egyptian astronomers</td> </tr> </tbody> </table></p>
+              </div>
+            </div>
+          </div>
+          <div class="col-sm-4">
+            <div class="card">
+              <div class="card-body">
+                <h5 class="card-title">Curent weather on Mars</h5>
+                <h6 class="card-subtitle mb-2 text-muted">from Nasa twitter account</h6>
+                <p class="card-text">{{ marsData.weatherData}}</p>
+              </div>
+            </div>
+          </div>
+        </div>
+        <div class="jumbotron jumbotron-fluid">
+            <div class="container">
+              <h2 class="display-4 text-center">Mars Hemispheres</h2>
+            </div>
+          </div>
+          <div class="card-group">
+              <div class="card">
+                <img class="card-img-top" src={{ marsData.hemisphere.0.image }} alt="Cerberus">
+                <div class="card-body">
+                  <h4 class="card-title">{{ marsData.hemisphere.0.title }}</h4>
+                 </div>
+              </div>
+              <div class="card">
+                  <img class="card-img-top" src={{ marsData.hemisphere.1.image }} alt="Schiaparelli">
+                <div class="card-body">
+                    <h4 class="card-title">{{ marsData.hemisphere.1.title }}</h4>
+              </div>
+              </div>
+              <div class="card">
+                  <img class="card-img-top" src={{ marsData.hemisphere.2.image }} alt="Syrtis">
+                <div class="card-body">
+                    <h4 class="card-title">{{ marsData.hemisphere.2.title }}</h4>
+                </div>
+              </div>
+              <div class="card">
+                  <img class="card-img-top" src={{ marsData.hemisphere.3.image }} alt="Syrtis">
+                <div class="card-body">
+                    <h4 class="card-title">{{ marsData.hemisphere.3.title }}</h4>
+                </div>
+              </div>
+            </div>
+
+
+    <script src="https://code.jquery.com/jquery-3.4.1.slim.min.js" integrity="sha384-J6qa4849blE2+poT4WnyKhv5vZF5SrPo0iEjwBvKU7imGFAV0wwj1yYfoRSJoZ+n" crossorigin="anonymous"></script>
+    <script src="https://cdn.jsdelivr.net/npm/popper.js@1.16.0/dist/umd/popper.min.js" integrity="sha384-Q6E9RHvbIyZFJoft+2mJbHaEWldlvI9IOYy5n3zV9zzTtmI3UksdQRVvoxMfooAo" crossorigin="anonymous"></script>
+    <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.4.1/js/bootstrap.min.js" integrity="sha384-wfSDF2E50Y2D1uUdj0O3uMBJnjuUD4Ih7YwaYd1iqfktj0Uod8GCExl3Og8ifwB6" crossorigin="anonymous"></script>
+</body>
+</html>
